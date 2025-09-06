@@ -1,73 +1,161 @@
-# Welcome to your Lovable project
+# TaskFlow - Sistema de Gestión de Tareas
 
-## Project info
+Un sistema moderno y elegante para la gestión de tareas personales y de equipo, construido con las mejores tecnologías web.
 
-**URL**: https://lovable.dev/projects/8cee3506-c3a2-4505-841a-6ba7be237a09
+## 🚀 Características
 
-## How can I edit this code?
+- **Dashboard Intuitivo**: Vista general de tu productividad con estadísticas y métricas
+- **Gestión de Tareas**: Crear, editar, eliminar y organizar tareas con diferentes prioridades
+- **Estados de Tareas**: Seguimiento de tareas pendientes, en progreso y completadas
+- **Filtros Avanzados**: Organiza tus tareas por estado y prioridad
+- **Interfaz Moderna**: Diseño responsive con modo oscuro/claro
+- **Notificaciones**: Sistema de alertas y recordatorios
+- **Perfil de Usuario**: Gestión de información personal y preferencias
 
-There are several ways of editing your application.
+## 🛠️ Tecnologías Utilizadas
 
-**Use Lovable**
+Este proyecto está construido con:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8cee3506-c3a2-4505-841a-6ba7be237a09) and start prompting.
+- **Vite** - Herramienta de construcción rápida y moderna
+- **TypeScript** - Tipado estático para JavaScript
+- **React 18** - Biblioteca de interfaz de usuario
+- **React Router DOM** - Enrutamiento del lado del cliente
+- **shadcn/ui** - Componentes de interfaz reutilizables
+- **Tailwind CSS** - Framework de CSS utilitario
+- **Radix UI** - Componentes primitivos accesibles
+- **Lucide React** - Iconos modernos y consistentes
+- **React Hook Form** - Manejo eficiente de formularios
+- **Zod** - Validación de esquemas TypeScript
+- **TanStack Query** - Manejo de estado del servidor
+- **Sonner** - Sistema de notificaciones toast
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📦 Instalación
 
-**Use your preferred IDE**
+### Prerrequisitos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js (versión 18 o superior)
+- npm o yarn
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Pasos de Instalación
 
-Follow these steps:
+1. **Clona el repositorio**
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd nebula-manage
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Instala las dependencias**
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Inicia el servidor de desarrollo**
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. **Abre tu navegador**
+   Navega a `http://localhost:5173` para ver la aplicación.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 🚀 Scripts Disponibles
+
+```bash
+# Desarrollo
+npm run dev          # Inicia el servidor de desarrollo
+
+# Construcción
+npm run build        # Construye la aplicación para producción
+npm run build:dev    # Construye en modo desarrollo
+
+# Linting
+npm run lint         # Ejecuta ESLint para verificar el código
+
+# Preview
+npm run preview      # Previsualiza la construcción de producción
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Estructura del Proyecto
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/          # Componentes reutilizables
+│   ├── layout/         # Componentes de diseño (sidebar, etc.)
+│   ├── ui/             # Componentes de interfaz (shadcn/ui)
+│   └── theme-provider.tsx
+├── hooks/              # Hooks personalizados de React
+├── lib/                # Utilidades y configuraciones
+├── pages/              # Páginas de la aplicación
+│   ├── Dashboard.tsx   # Panel principal
+│   ├── Tasks.tsx       # Gestión de tareas
+│   ├── Login.tsx       # Página de inicio de sesión
+│   └── Index.tsx       # Página principal con routing
+└── main.tsx           # Punto de entrada de la aplicación
+```
 
-**Use GitHub Codespaces**
+## 🎨 Personalización
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Temas
 
-## What technologies are used for this project?
+La aplicación soporta modo claro y oscuro. Los temas se pueden personalizar en:
+- `src/components/theme-provider.tsx`
+- `tailwind.config.ts`
 
-This project is built with:
+### Componentes
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Los componentes de shadcn/ui se pueden personalizar modificando los archivos en `src/components/ui/`.
 
-## How can I deploy this project?
+### Estilos
 
-Simply open [Lovable](https://lovable.dev/projects/8cee3506-c3a2-4505-841a-6ba7be237a09) and click on Share -> Publish.
+Los estilos globales se encuentran en:
+- `src/index.css` - Estilos globales
+- `src/App.css` - Estilos específicos de la aplicación
 
-## Can I connect a custom domain to my Lovable project?
+## 🚀 Despliegue
 
-Yes, you can!
+### Construcción para Producción
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+npm run build
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Los archivos construidos se generarán en la carpeta `dist/`.
+
+### Despliegue en Vercel
+
+1. Conecta tu repositorio a Vercel
+2. Configura las variables de entorno si es necesario
+3. Despliega automáticamente
+
+### Despliegue en Netlify
+
+1. Conecta tu repositorio a Netlify
+2. Configura el comando de construcción: `npm run build`
+3. Especifica el directorio de salida: `dist`
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 📞 Soporte
+
+Si tienes alguna pregunta o necesitas ayuda, por favor:
+
+1. Revisa la documentación
+2. Busca en los issues existentes
+3. Crea un nuevo issue si no encuentras la respuesta
+
+---
+
+**¡Gracias por usar TaskFlow!** 🎉
