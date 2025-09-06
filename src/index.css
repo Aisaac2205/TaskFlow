@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Task Manager Design System - Modern, Clean, Minimalist */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Mode - Clean & Modern */
+    --background: 0 0% 98%;
+    --foreground: 222 15% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 15% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand Colors - Deep Blue Primary */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 221 83% 48%;
+    --primary-glow: 221 83% 73%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Success Green for completed tasks */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+    --success-hover: 142 71% 40%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Warning Orange for pending tasks */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Subtle accent */
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 222 15% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Muted - For subtle elements */
+    --muted: 210 15% 96%;
+    --muted-foreground: 215 15% 55%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Accent - Interactive elements */
+    --accent: 210 15% 94%;
+    --accent-foreground: 222 15% 25%;
 
-    --radius: 0.5rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 214 15% 89%;
+    --input: 214 15% 92%;
+    --ring: 221 83% 53%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 63%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 15% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 15% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 15% 12% / 0.1), 0 2px 4px -2px hsl(222 15% 12% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 15% 12% / 0.1), 0 4px 6px -4px hsl(222 15% 12% / 0.1);
+    --shadow-glow: 0 0 20px hsl(221 83% 53% / 0.2);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +82,61 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Professional & Easy on Eyes */
+    --background: 222 20% 8%;
+    --foreground: 210 15% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 20% 10%;
+    --card-foreground: 210 15% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 20% 10%;
+    --popover-foreground: 210 15% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Brand Colors - Brighter in dark mode */
+    --primary: 221 83% 63%;
+    --primary-foreground: 222 20% 8%;
+    --primary-hover: 221 83% 58%;
+    --primary-glow: 221 83% 73%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Success Green for completed tasks */
+    --success: 142 71% 55%;
+    --success-foreground: 222 20% 8%;
+    --success-hover: 142 71% 50%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Warning Orange for pending tasks */
+    --warning: 38 92% 60%;
+    --warning-foreground: 222 20% 8%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Secondary - Dark subtle */
+    --secondary: 222 20% 15%;
+    --secondary-foreground: 210 15% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Muted - For subtle dark elements */
+    --muted: 222 20% 12%;
+    --muted-foreground: 215 15% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Accent - Interactive dark elements */
+    --accent: 222 20% 16%;
+    --accent-foreground: 210 15% 85%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 15% 92%;
+
+    /* Borders and inputs - Dark theme */
+    --border: 222 20% 18%;
+    --input: 222 20% 14%;
+    --ring: 221 83% 63%;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 63%), hsl(221 83% 73%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 55%), hsl(142 71% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 20% 10%), hsl(222 20% 8%));
+
+    /* Dark Mode Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 20% 4% / 0.8);
+    --shadow-md: 0 4px 6px -1px hsl(222 20% 4% / 0.6), 0 2px 4px -2px hsl(222 20% 4% / 0.6);
+    --shadow-lg: 0 10px 15px -3px hsl(222 20% 4% / 0.4), 0 4px 6px -4px hsl(222 20% 4% / 0.4);
+    --shadow-glow: 0 0 20px hsl(221 83% 63% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,10 +150,32 @@ All colors MUST be HSL.
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-300;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Smooth transitions for theme switching */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
   }
 }
